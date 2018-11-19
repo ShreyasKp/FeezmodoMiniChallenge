@@ -51,7 +51,10 @@ int main()
     cout << "Second name: ";
     getline(cin, name2);
 
-    cout << "Degree of Separation = " << BFS(name1, name2) << endl;
-
+    int degree = BFS(name1, name2);
+    if(degree != 100)
+        cout << "Degree of Separation = " << BFS(name1, name2) << endl;
+    else
+        cout << "Incorrect name" << endl;
     return 0;
 }
