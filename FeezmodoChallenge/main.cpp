@@ -72,29 +72,34 @@ int main()
     AL["Fiona"].push_back("Denise");
 
     int option;
-    cout << "Press 1 for adding new persons" << endl;
-    cout << "Press 2 for finding degree of separation" << endl;
-    cout << "Enter your choice: ";
-    cin >> option;
-    switch(option) {
-    case 1:
-        addPerson();
-        break;
-    case 2:
-        string name1, name2;
-        cin.get();
-        cout << "First name: ";
-        getline(cin, name1);
 
-        cout << "Second name: ";
-        getline(cin, name2);
+    do {
+        cout << "Press 1 for adding new persons" << endl;
+        cout << "Press 2 for finding degree of separation" << endl;
+        cout << "Press 3 to exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> option;
+        switch(option) {
+        case 1:
+            addPerson();
+            break;
+        case 2:
+            string name1, name2;
+            cin.get();
+            cout << "First name: ";
+            getline(cin, name1);
 
-        int degree = BFS(name1, name2);
-        if(degree != 100)
-            cout << "Degree of Separation = " << BFS(name1, name2) << endl;
-        else
-            cout << "Incorrect name" << endl;
-        break;
-    }
+            cout << "Second name: ";
+            getline(cin, name2);
+
+            int degree = BFS(name1, name2);
+            if(degree != 100)
+                cout << "Degree of Separation = " << BFS(name1, name2) << endl;
+            else
+                cout << "Incorrect name" << endl;
+            break;
+        }
+        cout << endl;
+    } while (option!=3);
     return 0;
 }
